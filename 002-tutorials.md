@@ -7,6 +7,7 @@ Top down RPG. 7 hours: https://www.youtube.com/watch?v=b8YUfee_pzc
 
 Mobile runner game. 14 hours: https://www.youtube.com/watch?v=kgShNcTxMIg 
 
+Rougelike game using scriptable objects. 2 hours. https://www.youtube.com/playlist?list=PLSHqi2dTiNGCncSOksACfJChpfPa6qz9w
 
 ### Tutorials on specific topics
 
