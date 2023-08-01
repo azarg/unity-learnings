@@ -9,6 +9,12 @@ Mobile runner game. 14 hours: https://www.youtube.com/watch?v=kgShNcTxMIg
 
 Rougelike game using scriptable objects. 2 hours. https://www.youtube.com/playlist?list=PLSHqi2dTiNGCncSOksACfJChpfPa6qz9w
 
+### Architectural topics
+Scriptable objects: https://unity.com/how-to/architect-game-code-scriptable-objects
+
+Scriptable objects: https://www.youtube.com/watch?v=6vmRwLYWNRo
+
+
 ### Tutorials on specific topics
 
 Rect Transform. Official unity tutorial. 
