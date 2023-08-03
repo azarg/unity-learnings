@@ -2,6 +2,9 @@ Code Monkey<br>@CodeMonkeyUnity<br>479K subscribers, 777 videos<br>
 https://www.youtube.com/@CodeMonkeyUnity
 <br><br>Lots of great content, tutorials on specific topics for c#, Unity, and gave dev in general<br>
 <hr>
+Infallible Code<br>@InfallibleCode<br>69.2K subscribers, 237 videos<br>
+https://www.youtube.com/c/InfallibleCode
+<br><br><hr>
 GameDevBeginner<br>
 https://gamedevbeginner.com/
 <br><br>Lots of great blog posts, some are quite in-depth. 
