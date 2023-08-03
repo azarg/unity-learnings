@@ -1,5 +1,5 @@
 ```cs
-public void SaveColor() {
+public void SaveToFile() {
     SaveData data = new SaveData();
     // initialize fields on "data"
     // data.someField = someValue;
@@ -8,7 +8,7 @@ public void SaveColor() {
     File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
 }
 
-public void LoadColor() {
+public void LoadFromFile() {
     string path = Application.persistentDataPath + "/savefile.json";
     if (File.Exists(path)) {
         string json = File.ReadAllText(path);
