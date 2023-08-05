@@ -11,6 +11,9 @@ GameDevBeginner<br>
 https://gamedevbeginner.com/
 <br><br>Lots of great blog posts, some are quite in-depth. 
 <hr>
+Zigurous<br>@Zigurous<br>16.9K subscribers,24 videos<br>
+https://www.youtube.com/@Zigurous
+<br><br><hr>
 Epitome<br>@N3K.Michael<br>33.9K subscribers, 97 videos<br>
 https://www.youtube.com/@N3K.Michael
 <br><br>Unity tutorials. full top down RPG game, online chess game, mobile runner game.
