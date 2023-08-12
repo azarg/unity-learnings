@@ -58,29 +58,34 @@ using UnityEngine.EventSystems;
 public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
     [SerializeField] private string message;
-    [SerializeField] private Vector3 spawn;
-    [SerializeField] private float hoverTime = 0.5f;
-    
-    public void Initialize(string message, Vector3 spawn) {
+    [SerializeField] private Transform spawn;
+    [SerializeField] private float hoverDelay = 0.5f;
+
+    private bool hover;
+
+    public void Initialize(string message, Transform spawn, float hoverDelay) {
         this.message = message;
         this.spawn = spawn;
+        this.hoverDelay = hoverDelay;
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
-        if (message != null) {
-            StopCoroutine(DelayedShowTip());
+        hover = true;
+        if (!string.IsNullOrEmpty(message) && spawn != null) {
             StartCoroutine(DelayedShowTip());
         }
     }
-
-    private IEnumerator DelayedShowTip() {
-        yield return new WaitForSeconds(hoverTime);
-        HoverTipController.ShowTip(message, spawn);
+    
+    public void OnPointerExit(PointerEventData eventData) {
+        hover = false;
+        HoverTipController.HideTip();
     }
 
-    public void OnPointerExit(PointerEventData eventData) {
-        StopCoroutine(DelayedShowTip());
-        HoverTipController.HideTip();
+    private IEnumerator DelayedShowTip() {
+        yield return new WaitForSeconds(hoverDelay);
+        if (hover) {
+            HoverTipController.ShowTip(message, spawn.position);
+        }
     }
 }
 ```
