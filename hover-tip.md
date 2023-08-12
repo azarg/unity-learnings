@@ -2,6 +2,8 @@ Step 1. Create the HoverTip game object in the scene (Canvas)
 - Add an empty game object to Canvas, rename "HoverTip"
 - Add a UI panel as a child, rename to "Box"
 - Add a UI text (TextMeshPro) as a child of Box, rename to "Text"\
+- Disable Raycast Target option for both the panel and the text
+- Make sure the HoverTip is the last item in the Canvas, so that it renders on top of everything else
 ![image](https://github.com/azarg/unity-learnings/assets/6077141/485ff725-0b3c-4511-bafa-b475afa7ccb2)
 
 Step 2. Attach this controller script to the HoverTip game object
