@@ -2,9 +2,8 @@ The singleton:
 ```cs
 using UnityEngine;
 
-public class MainManager : MonoBehaviour {
-    public static MainManager Instance;
-    public float PlayerHP;
+public class GameManager : MonoBehaviour {
+    public static GameManager Instance;
     private void Awake() {
         if (Instance != null) {
             Destroy(gameObject);
@@ -17,11 +16,3 @@ public class MainManager : MonoBehaviour {
 }
 ```
 
-Usage:
-```cs
-public class SomeClass : MonoBehaviour {
-    public void SomeFunction(float hp) {
-        MainManager.Instance.PlayerHP = hp;
-    }
-}
-```
