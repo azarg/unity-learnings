@@ -4,6 +4,11 @@ https://www.youtube.com/@CodeMonkeyUnity
 <hr>
 https://catlikecoding.com/unity/tutorials/
 <hr>
+Jason Weimann<br>
+@Unity3dCollege, 193K subscribers, 685 videos<br>
+The #1 place for Unity3D Tutorials, News, & Tips!<br>  
+https://www.youtube.com/@Unity3dCollege  
+<br><br><hr>
 Infallible Code<br>@InfallibleCode<br>69.2K subscribers, 237 videos<br>
 https://www.youtube.com/c/InfallibleCode
 <br><br><hr>
