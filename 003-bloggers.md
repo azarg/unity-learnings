@@ -2,9 +2,13 @@ Code Monkey<br>479K subscribers, 777 videos<br>
 https://www.youtube.com/@CodeMonkeyUnity <br><br>
 Lots of great content, tutorials on specific topics for c#, Unity, and gave dev in general <hr>
 
-Catlike Coding<br>
+Catlike Coding <br>
 https://catlikecoding.com/unity/tutorials/ <br><br>
 Advanced topics, very detailed. Include topics such as: procedural meshes, pseudorandom surfaces, hex maps, etc. <hr>
+
+Sebastian Lague <br>
+1.15M subscribers, 278 videos <br>
+https://www.youtube.com/@SebastianLague <br><br>
 
 Game Dev Guide<br>
 106K subscribers, 46 videos<br>
