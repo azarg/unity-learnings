@@ -9,6 +9,12 @@ Jason Weimann<br>
 The #1 place for Unity3D Tutorials, News, & Tips!<br>  
 https://www.youtube.com/@Unity3dCollege  
 <br><br><hr>
+Useless Game Dev<br>
+@uselessgamedev, 33.1K subscribers, 11 videos<br>
+Silly game development ideas and prototypes, with some technical information sprinkled on top if you're into game dev.
+Mostly with the Unity engine.<br>
+https://www.youtube.com/@uselessgamedev
+<br><br><hr>
 Infallible Code<br>@InfallibleCode<br>69.2K subscribers, 237 videos<br>
 https://www.youtube.com/c/InfallibleCode
 <br><br><hr>
