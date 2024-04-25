@@ -58,3 +58,11 @@ It may seem like this is an issue if you're using object pooling strategy where 
 
 But still, this may become an issue with too many objects and complex calculations.
 
+###### What happens when the game object is destroyed
+Short answer: try to avoid destroying game objects that are added to TransformAccessArray.  The reason is that when the game object is destroyed, its corresponding element in the TransformAccessArray becomes null.  If you subsequently add new elements to the TransformAccessArray, the array will automatically grow instead of filling the null elements.  If you continuously add to TransformAccessArray and then destroy these game objects, the array will keep growing and have lots of null elements which is... not good.  Although this will be a noticeable problem once the array size is in millions.
+
+One workaround would be to dispose and then rebuild the TransformAccessArray from time to time. For example if you have waves of enemies:
+1. Create a new TransformAccessArray
+2. Spawn enemies and add them to the array
+3. Eventually all enemies dies (destroyed) and then you dispose of the array
+4. go to 1 for the next wave
