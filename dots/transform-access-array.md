@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
     }
 }
 ```
-Important to note that although you have to specify an initial capacity for the TransformAccessArray, it will automatically grow (by doubling its size) when time it fills up.
+Important to note that although you have to specify an initial capacity for the TransformAccessArray, it will automatically grow (by doubling its size) when it fills up.
 
 ###### 2. Update transforms in a job called from a system
 
@@ -50,4 +50,11 @@ public struct TransformUpdateJob : IJobParallelForTransform
 3. The job can be burst compiled.  Any complex calculations will be fast
 4. The job will run parallel for transforms that are on different hierarchies.  Meaning if all your transforms (in the TransformAccessArray) are under the same parent game object, then the job will run in a single thread, but if the transforms are under 8 different parent game objects (which are not nested with each other), then it will run on 8 different threads in parallel.  
 
+## Questions and issues:
+###### What happens when the game object is disabled (common practice in object pooling)
+TransformAccessArray will still hold the reference to the transform, and surprisingly, the IJobParallelForTransform will continue updating the transforms!!!  This is unlike updating transform through Update() method, in which case the Update() will not be called for disabled game objects.  
+
+It may seem like this is an issue if you're using object pooling strategy where game objects are disabled when returned to the pool.  The issue would be that the job would still run and the game object transforms would still get updated which may seem wasteful and bad for performance.  However, updating transforms using IJobParallelForTransform is really fast (1ms for 10k transform updates). And the calculations run in a burst compiled job, hence also very fast.
+
+But still, this may become an issue with too many objects and complex calculations.
 
