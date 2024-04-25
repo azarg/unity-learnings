@@ -51,14 +51,14 @@ public struct TransformUpdateJob : IJobParallelForTransform
 4. The job will run parallel for transforms that are on different hierarchies.  Meaning if all your transforms (in the TransformAccessArray) are under the same parent game object, then the job will run in a single thread, but if the transforms are under 8 different parent game objects (which are not nested with each other), then it will run on 8 different threads in parallel.  
 
 ## Questions and issues:
-###### What happens when the game object is disabled (common practice in object pooling)
+### What happens when the game object is disabled (common practice in object pooling)
 TransformAccessArray will still hold the reference to the transform, and surprisingly, the IJobParallelForTransform will continue updating the transforms!!!  This is unlike updating transform through Update() method, in which case the Update() will not be called for disabled game objects.  
 
 It may seem like this is an issue if you're using object pooling strategy where game objects are disabled when returned to the pool.  The issue would be that the job would still run and the game object transforms would still get updated which may seem wasteful and bad for performance.  However, updating transforms using IJobParallelForTransform is really fast (1ms for 10k transform updates). And the calculations run in a burst compiled job, hence also very fast.
 
 But still, this may become an issue with too many objects and complex calculations.
 
-###### What happens when the game object is destroyed
+### What happens when the game object is destroyed
 Short answer: try to avoid destroying game objects that are added to TransformAccessArray.  The reason is that when the game object is destroyed, its corresponding element in the TransformAccessArray becomes null.  If you subsequently add new elements to the TransformAccessArray, the array will automatically grow instead of filling the null elements.  If you continuously add to TransformAccessArray and then destroy these game objects, the array will keep growing and have lots of null elements which is... not good.  Although this will be a noticeable problem once the array size is in millions.
 
 One workaround would be to dispose and then rebuild the TransformAccessArray from time to time. For example if you have waves of enemies:
