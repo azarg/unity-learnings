@@ -1,4 +1,4 @@
-## Testing performance of adding/removing 1000 components to Entities
+## Testing performance of adding/removing components to 1000 Entities
 
 Results:
 
@@ -10,6 +10,18 @@ Results:
     <tr><td>1</td><td>Empty component</td><td></td><td>2.63 ms</td></tr>
     <tr><td>6</td><td>Managed component</td><td></td><td>8.68 ms</td></tr>
 </table>
+
+For comparison against tag components, an alternative of using IEnableableComponent and setting its value to true/false instead of adding/removing the tag component has 100x better performance (even without Burst!):
+
+<table><tr><th>Test#</th><th>Type of component</th><th>Burst status</th><th>CPU time</th></tr>
+    <tr><td>7</td><td>Enableable component</td><td></td><td>0.02 ms</td></tr>
+</table>
+
+
+**Conclusion:**  Adding / removing components is expensive since they cause a structural change.
+If you need to identify state of an Entity, add IEnableableComponent and change its value to true/false as needed instead of adding/removing a tag component.
+
+<hr/>
 
 ### 1. Simple Component with a single float field
 
@@ -107,3 +119,17 @@ public class ManagedComponent : IComponentData { }
 ```
 
 ![image](https://github.com/azarg/unity-learnings/assets/6077141/245c71f4-3157-4e84-911c-4d4ef7edf199)
+
+### 7. Enabling/disabling IEnableableComponent
+
+Code changes:
+```csharp
+public struct EnableableComponent : IComponentData, IEnableableComponent { }
+...
+    ecb.SetComponentEnabled<EnableableComponent>(entity, false);
+    ecb.SetComponentEnabled<EnableableComponent>(entity, true);
+```
+
+![image](https://github.com/azarg/unity-learnings/assets/6077141/1273d39d-3ca8-4704-bab6-3f503a2da966)
+
+
