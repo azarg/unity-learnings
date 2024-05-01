@@ -71,5 +71,9 @@ public void OnUpdate(ref SystemState state) {
 ![image](https://github.com/azarg/unity-learnings/assets/6077141/4a04135c-3ef2-4079-ade4-c9fb3e950f96)
 
 ### Conclusion:
-Creating/destroying Entities with a LocalTransform component is slower (>50% slower, 5ms vs 8ms for 300 items) than creating/destroying GameObjects (with Transforms created automatically).  However, we get significantly better performance (>60% better, 2ms vs 5ms) if we batch Entity creation/destruction using EntityCommandBuffer.
+Creating/destroying Entities is NOT significantly faster than creating/destroying GameObjects, unlike what I presumed before the tests.
+
+In fact, creating/destroying entities with a LocalTransform component is **slower** than creating/destroying GameObjects (which get Transforms created automatically). The performance comparison is 5ms for GameObjects vs 8ms for Entities (300 each), i.e. Entities are >50% slower. 
+
+We get better performance if we batch Entity creation/destruction using EntityCommandBuffer. This time, performance of creating/destroying Entities goes down to 2ms. However, in pactice it may be hard to consolidate all entity creation/destruction into a single command buffer.  
 
