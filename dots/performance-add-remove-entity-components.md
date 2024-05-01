@@ -83,3 +83,16 @@ public struct TagComponent : IComponentData { }
 Same as previous, but [BurstCompile] removed.  Compare results to test 1.
 
 ![image](https://github.com/azarg/unity-learnings/assets/6077141/22c4ecb3-8ae3-4ad3-8a5e-f6f5efa0f4ba)
+
+### 6. Add/remove empty managed component (cannot be Bursted)
+
+Code change:
+
+```csharp
+public class ManagedComponent : IComponentData { }
+...
+    ecb.AddComponent<ManagedComponent>(entity);
+    ecb.RemoveComponent<ManagedComponent>(entity);
+```
+
+![image](https://github.com/azarg/unity-learnings/assets/6077141/245c71f4-3157-4e84-911c-4d4ef7edf199)
