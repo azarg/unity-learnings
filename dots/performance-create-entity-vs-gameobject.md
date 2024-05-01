@@ -34,7 +34,7 @@ Note that entities require more than memory game objects. This is because ECS al
 
 ### Entity with LocalTransform:
 
-Comparing simplest Entity with simplest GameObject is not apples to apples, because creating the simplest GameObject also creates a Transform component.  Whereas the simplest Entity does create a LocalTransform (entities equivalent of Transform) component.  Therefore, next test creates entities with LocalTransform for more fair comparison with GameObjects
+Comparing simplest Entity with simplest GameObject is not apples to apples, because creating the simplest GameObject also creates a Transform component.  Whereas the simplest Entity does create a LocalTransform (entities equivalent of Transform) component.  Therefore, the next test creates entities with LocalTransform for more fair comparison with GameObjects
 
 ```csharp
 public void OnUpdate(ref SystemState state) {
@@ -73,7 +73,7 @@ public void OnUpdate(ref SystemState state) {
 ### Conclusion:
 Creating/destroying Entities is NOT significantly faster than creating/destroying GameObjects, unlike what I presumed before the tests.
 
-In fact, creating/destroying entities with a LocalTransform component is **slower** than creating/destroying GameObjects (which get Transforms created automatically). The performance comparison is 5ms for GameObjects vs 8ms for Entities (300 each), i.e. Entities are >50% slower. 
+In fact, creating/destroying entities with a LocalTransform component is **slower** than creating/destroying GameObjects (which get Transforms created automatically). The performance comparison is 5ms for GameObjects vs 8ms for Entities (500 each), i.e. Entities are >50% slower. 
 
 We get better performance if we batch Entity creation/destruction using EntityCommandBuffer. This time, performance of creating/destroying Entities goes down to 2ms. However, in pactice it may be hard to consolidate all entity creation/destruction into a single command buffer.  
 
