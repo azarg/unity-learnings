@@ -1,5 +1,16 @@
 ## Testing performance of adding/removing 1000 components to Entities
 
+Results:
+
+<table><tr><th>Test#</th><th>Type of component</th><th>Burst status</th><th>CPU time</th></tr>
+    <tr><td>4</td><td>Tag component</td><td>BurstCompile(DisableSafetyChecks=true)</td><td>1.4 ms</td></tr>
+    <tr><td>3</td><td>Empty component</td><td>BurstCompile(DisableSafetyChecks=true)</td><td>1.5 ms</td></tr>
+    <tr><td>2</td><td>Empty component</td><td>BurstCompile</td><td>1.75 ms</td></tr>
+    <tr><td>5</td><td>Tag component</td><td></td><td>2.39 ms</td></tr>
+    <tr><td>1</td><td>Empty component</td><td></td><td>2.63 ms</td></tr>
+    <tr><td>6</td><td>Managed component</td><td></td><td>8.68 ms</td></tr>
+</table>
+
 ### 1. Simple Component with a single float field
 
 ![image](https://github.com/azarg/unity-learnings/assets/6077141/c6aa0775-ec79-4c97-a297-eae6088e5e37)
