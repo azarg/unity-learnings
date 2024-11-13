@@ -1,3 +1,7 @@
+Attach this script to the main camera.
+Set targetWidthToHeight in the inspector.
+
+```cs
 using UnityEngine;
 
 public class FixedAspectCameraSize : MonoBehaviour
@@ -45,3 +49,4 @@ public class FixedAspectCameraSize : MonoBehaviour
         }
     }
 }
+```
